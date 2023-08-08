@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="2dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".PlayerActivity">
+
+    <!-- First Row -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- Back Button -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/backBtnPA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/back_btn"
+            android:padding="5dp"
+            android:src="@drawable/previous_icon"
+            android:tint="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/world_of_music"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <!-- Favourite Button -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/favouriteBtnPA"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/favourites_btn"
+            android:src="@drawable/favorite_empty_icon"
+            android:tint="@android:color/holo_red_dark" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <!-- Current Song Image -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/songImgPA"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/splash_screen"
+        app:shapeAppearanceOverlay="@style/curved"
+        app:strokeColor="@color/cool_blue"
+        app:strokeWidth="5dp" />
+
+    <!-- Current Song name -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/songNamePA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/song_name"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+
+    <!-- Floating btn for Previous, Pause & Next -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- Previous Button -->
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/priviousBtnPA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/baseline_navigate_before_24"
+            app:iconSize="40dp" />
+
+        <!-- Play and Pause Button -->
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/playPauseBtnPA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:backgroundTint="@android:color/holo_red_light"
+            app:icon="@drawable/pause_icon"
+            app:iconSize="50dp"
+            app:iconTint="@color/white"
+            app:shapeAppearanceOverlay="@style/curved" />
+
+        <!-- Next Button -->
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/nextBtnPA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/next_icon"
+            app:iconSize="40dp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!-- Seekbar & TextView for it -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_margin="20dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSeekBarStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/start_tv"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/seekBarPA"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:ignore="NestedWeights" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSeekBarEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/end_tv"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <!-- Repeat Button -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/repeatBtnPA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/repeat_btn"
+            android:src="@drawable/repeat_icon"
+            android:tint="@color/cool_pink" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/equalizerBtnPA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/equalizer_btn"
+            android:src="@drawable/equalizer_icon"
+            android:tint="@color/cool_pink" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/timerBtnPA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/timer_btn"
+            android:src="@drawable/timer_icon"
+            android:tint="@color/cool_pink" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/shareBtnPA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/share_btn"
+            android:src="@drawable/share_icon"
+            android:tint="@color/cool_pink" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
