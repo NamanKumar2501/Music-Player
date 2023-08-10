@@ -15,7 +15,7 @@ import com.example.musicplayer.PlayerActivity
 import com.example.musicplayer.R
 import com.example.musicplayer.databinding.MusicViewBinding
 
-class MusicAdapter(private val context: Context, private var musicList: ArrayList<Music>) : RecyclerView.Adapter<MusicAdapter.MyHolder>() {
+class MusicAdapter(private val context: Context, private var musicList: ArrayList<Music>, private var playlistDetails : Boolean = false) : RecyclerView.Adapter<MusicAdapter.MyHolder>() {
     class MyHolder(binding: MusicViewBinding) : RecyclerView.ViewHolder(binding.root) {
         val title = binding.songNameMV
         val album = binding.songAlbumMV

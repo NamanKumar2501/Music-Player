@@ -17,6 +17,17 @@ data class Music(
     val artUri: String
 )
 
+class Playlist{
+    lateinit var name: String
+    lateinit var playlist : ArrayList<Music>
+    lateinit var createdBy: String
+    lateinit var createdOn: String
+}
+
+class MusicPlaylist{
+    var ref: ArrayList<Playlist> = ArrayList()
+}
+
 fun formatDuration(duration: Long): String {
 
 //    val minutes = TimeUnit.MINUTES.convert(duration, TimeUnit.MINUTES)

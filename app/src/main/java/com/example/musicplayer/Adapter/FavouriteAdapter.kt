@@ -16,8 +16,7 @@ import com.example.musicplayer.R
 import com.example.musicplayer.databinding.FavouriteViewBinding
 import com.example.musicplayer.databinding.MusicViewBinding
 
-class FavouriteAdapter(private val context: Context, private var musicList: ArrayList<Music>) :
-    RecyclerView.Adapter<FavouriteAdapter.MyHolder>() {
+class FavouriteAdapter(private val context: Context, private var musicList: ArrayList<Music>) : RecyclerView.Adapter<FavouriteAdapter.MyHolder>() {
     class MyHolder(binding: FavouriteViewBinding) : RecyclerView.ViewHolder(binding.root) {
         val image = binding.songImgFV
         val name = binding.songNameFV

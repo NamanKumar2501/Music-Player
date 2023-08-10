@@ -127,6 +127,7 @@ class MainActivity : AppCompatActivity() {
                 ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE), 13)
             }
         }
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
