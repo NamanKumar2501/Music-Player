@@ -1,6 +1,7 @@
 package com.example.musicplayer
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -25,6 +26,10 @@ class PlaylistDetailsActivity : AppCompatActivity() {
         binding = ActivityPlaylistDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.backBtnPD.setOnClickListener { finish() }
+
+
+
         currentPlaylistPos = intent.extras?.get("index") as Int
 
         binding.playlistDetailsRV.setItemViewCacheSize(18)
@@ -32,16 +37,29 @@ class PlaylistDetailsActivity : AppCompatActivity() {
         binding.playlistDetailsRV.layoutManager = LinearLayoutManager(this)
 
         PlaylistActivity.musicPlaylist.ref[currentPlaylistPos].playlist.addAll(MainActivity.MusicListMA)
+        PlaylistActivity.musicPlaylist.ref[currentPlaylistPos].playlist.shuffle()
 
         adapter = MusicAdapter(this, PlaylistActivity.musicPlaylist.ref[currentPlaylistPos].playlist, playlistDetails = true)
         binding.playlistDetailsRV.adapter = adapter
+
+        binding.suffleBtnPD.setOnClickListener {
+            val intent = Intent(this, PlayerActivity::class.java)
+            intent.putExtra("index",0)
+            intent.putExtra("class","PlaylistDetailsShuffle")
+            startActivity(intent)
+        }
+
+        binding.addBtnPD.setOnClickListener {
+            startActivity(Intent(this, SelectionActivity::class.java))
+        }
+
     }
 
     @SuppressLint("SetTextI18n")
     override fun onResume() {
         super.onResume()
         binding.playlistNamePD.text = PlaylistActivity.musicPlaylist.ref[currentPlaylistPos].name
-        binding.moreInfoPD.text = "Total ${adapter.itemCount} Songd. \n\n"+
+        binding.moreInfoPD.text = "Total ${adapter.itemCount} Songs. \n\n"+
                 "Created On:\n${PlaylistActivity.musicPlaylist.ref[currentPlaylistPos].createdOn}\n\n" +
                 "-- ${PlaylistActivity.musicPlaylist.ref[currentPlaylistPos].createdBy}"
 
